@@ -37,7 +37,7 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
         schema.update({
             'methodology': [ignore_missing, convert_to_extras],
             'data_update_frequency': [ignore_missing, convert_to_extras],
-            'names': [not_empty, convert_to_extras],
+            'field_names': [not_empty, convert_to_extras],
             'file_types': [not_empty, convert_to_extras],
             'num_of_rows': [ignore_missing, int_validator]
         })

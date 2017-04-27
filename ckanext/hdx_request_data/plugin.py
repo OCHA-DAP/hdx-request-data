@@ -31,15 +31,15 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
             elif plugin.name == 'requestdata':
                 requestdata_schema = plugin.create_package_schema()
 
-        schema.update(hdx_package_schema)
         schema.update(requestdata_schema)
+        schema.update(hdx_package_schema)
 
         schema.update({
             'methodology': [ignore_missing, convert_to_extras],
             'data_update_frequency': [ignore_missing, convert_to_extras],
             'field_names': [not_empty, convert_to_extras],
             'file_types': [not_empty, convert_to_extras],
-            'num_of_rows': [ignore_missing, int_validator]
+            'num_of_rows': [ignore_missing, int_validator, convert_to_extras]
         })
 
         schema.pop('license_id')
@@ -47,7 +47,7 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
 
         # "groups_list" is temporary removed from the schema because there are
         # some issues when creating/updating a package
-        schema.pop('groups_list')
+        # schema.pop('groups_list')
 
         return schema
 
@@ -66,6 +66,31 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
     def show_package_schema(self):
         schema = super(Hdx_Request_DataPlugin, self).show_package_schema()
 
+        hdx_package_schema = {}
+        requestdata_schema = {}
+
+        convert_from_extras = toolkit.get_converter('convert_from_extras')
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        not_empty = toolkit.get_validator('not_empty')
+        int_validator = toolkit.get_validator('int_validator')
+
+        for plugin in plugins.PluginImplementations(plugins.IDatasetForm):
+            if plugin.name == 'hdx_package':
+                hdx_package_schema = plugin.show_package_schema()
+            elif plugin.name == 'requestdata':
+                requestdata_schema = plugin.show_package_schema()
+
+        schema.update(requestdata_schema)
+        schema.update(hdx_package_schema)
+
+        schema.update({
+            'methodology': [convert_from_extras, ignore_missing],
+            'data_update_frequency': [convert_from_extras, ignore_missing],
+            'field_names': [convert_from_extras, not_empty],
+            'file_types': [convert_from_extras, not_empty],
+            'num_of_rows': [convert_from_extras, ignore_missing, int_validator]
+        })
+
         return schema
 
     def is_fallback(self):
@@ -73,12 +98,3 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
 
     def package_types(self):
         return ['hdx-requestdata-metadata-only']
-
-    def validate(self, context, data_dict, schema, action):
-        if action in ['package_create', 'package_update']:
-            tags = data_dict.get('tags')
-
-            if not tags:
-                raise toolkit.ValidationError('Missing value: tags')
-
-        return toolkit.navl_validate(data_dict, schema, context)

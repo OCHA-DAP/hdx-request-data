@@ -1,14 +1,16 @@
 {% ckan_extends %}
 
-  {{ super() }}
+{{ super() }}
 
+{% block styles %}
+{% resource 'hdx_request_data/css/request-data.css' %}
+{% endblock %}
   {% block resource_list %}
-
-
            {% set redirect_url = h.url_for(controller='user', action='login') %}
            {% set requestdata_action = h.url_for('requestdata_send_request') %}
            {% set request_post_data = h.dump_json({'package_id':pkg.id}) %}
-              <p class="empty">Unfortunately the actual data isn't available right now!!!. If you are interested to receive it you can request data</p>
+              <p class="empty">Unfortunately the actual data isn't available right now. If you are interested to receive it, just get in touch with the meta data uploader:
+              </p>
               <a href="#" class="btn pull-right"
                  data-module="modal-form"
                  data-module-template_file="request_contact.html"

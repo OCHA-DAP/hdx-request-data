@@ -1,0 +1,118 @@
+.modal {
+  display: block;
+}
+
+.modal-content {
+  border: unset !important;
+}
+
+.modal-body {
+  padding: 0px 0px 0px !important;
+  top: 30%;
+}
+
+.right-col {
+  background-color: #ededed;
+  padding: 60px;
+  height: inherit;
+}
+
+.left-col {
+  background-color: #1ebdaf;
+  padding: 80px !important;
+  height: inherit;
+}
+
+.two-cols {
+  width: 890px !important;
+  height: 700px !important;
+  overflow: hidden !important;
+  margin-left: 0px !important;
+}
+
+.large-title {
+  font-family: 'Gotham-Book', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.large-text {
+  font-family: 'Gotham-Book', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.regular-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #464a4a;
+}
+
+.bottom-actions {
+  position: absolute !important;
+  right: 35px !important;
+  bottom: 35px;
+}
+
+.ds-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.mtop5 {
+  margin-top: 5px;
+}
+
+.redasterisk::after {
+  content: "*";
+  color: red;
+}
+
+.curvy-border {
+  border: 1px solid #a9a9a9 !important;
+  border-radius: 5px !important;
+}
+
+.mbottom10 {
+  margin-bottom: 10px;
+}
+
+.mbottom15 {
+  margin-bottom: 15px;
+}
+
+.posfix {
+  top: 10% !important;
+  left: 25% !important;
+}
+
+.mTop20 {
+  margin-top: 20px;
+}
+
+.form-fix {
+  margin-right: 50px !important;
+  line-height: 2 !important;
+  font-weight: bold;
+  padding-right: 10px !important;
+}
+
+.modal-footer {
+  border-top: unset !important;
+}
+
+.paddingfix {
+  padding: 20px;
+}
+
+.form-horizontal .controls {
+     margin-left: unset !important;
+    margin-right: 50px;

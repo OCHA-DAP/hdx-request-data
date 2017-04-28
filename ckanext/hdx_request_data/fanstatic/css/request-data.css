@@ -243,6 +243,10 @@ h4{
   color: #ff0000;
 }
 
+.reply-request-form-control .error-block {
+  top: 122px;
+}
+
 .sysadmin-requests-container__dropdown > div > label {
   left: 30px;
   width: 170px;
@@ -251,4 +255,44 @@ h4{
 .sysadmin-requests-container__dropdown-buttons {
   text-align: center;
   margin-bottom: 8px;
+}
+
+.reply-request-form {
+  width: 880px !important;
+  height: 550px !important;
+}
+
+.reply-request-form-large-title {
+  color: #7C7B7C;
+  font-family: 'Gotham-Bold', sans-serif;
+}
+
+.reply-request-form-request-info {
+  font-family: 'Gotham-Bold', sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.reply-request-form-line {
+  width: 100%;
+  background-color: #A7A7A7;
+  height: 1px;
+  margin-top: 25px;
+}
+
+.reply-request-form-sender-message {
+  margin-top: 25px;
+}
+
+.reply-request-form-sender-message span {
+  color: #7C7B7C;
+  font-family: 'Gotham-Bold', sans-serif;
+  font-size: 14px;
+}
+
+.reply-request-form-message-content {
+  width: 335px;
+  border: 1px solid #A7A7A7;
+  margin-top: 20px;
+  border-radius: 8px;
 }

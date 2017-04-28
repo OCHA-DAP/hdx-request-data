@@ -2,25 +2,23 @@
 
 {% ckan_extends %}
 
+{% block sender_name %}
+  <div class="request-data-form-control">
+      <input id="field-name" name="sender_name" class="request-data-form-input" type="text" value="" required="required">
+      <label for="field-name" class="request-data-form-label">your name</label>
+  </div>
+{% endblock %}
 
+{% block email %}
+  <div class="request-data-form-control">
+      <input id="field-email" name="email_address" class="request-data-form-input" type="text" value="" required="required">
+      <label for="field-email" class="request-data-form-label">your e-mail</label>
+  </div>
+{% endblock %}
 
-  {% block sender_name %}
-    <div class="request-data-form-control">
-        <input id="field-name" name="sender_name" class="request-data-form-input" type="text" value="" required="required">
-        <label for="field-name" class="request-data-form-label">your name</label>
+{% block message_content %}
+  <div class="request-data-form-control">
+    <textarea id="field-comments" name="message_content" class="request-data-form-input" type="text" value="" required="required" style="height: 100px; padding: 12px;"></textarea>
     </div>
-  {% endblock %}
-
-  {% block email %}
-    <div class="request-data-form-control">
-        <input id="field-email" name="email_address" class="request-data-form-input" type="text" value="" required="required">
-        <label for="field-email" class="request-data-form-label">your e-mail</label>
-    </div>
-  {% endblock %}
-
-  {% block message_content %}
-    <div class="request-data-form-control">
-      <textarea id="field-comments" name="message_content" class="request-data-form-input" type="text" value="" required="required" style="height: 100px; padding: 12px;"></textarea>
-      </div>
-  {% endblock %}
+{% endblock %}
 

@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block primary %}
+{{ super() }}
+{% resource 'hdx_request_data/remove-class.js' %}
+{% resource 'hdx_request_data/css/request-data.css' %}
+{% endblock %}

@@ -16,7 +16,7 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
 
     # IDatasetForm
 
-    def _modify_package_schema(self, schema):
+    def _modify_package_schema(self, schema, type='create'):
         hdx_package_schema = {}
         requestdata_schema = {}
 
@@ -27,9 +27,15 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
 
         for plugin in plugins.PluginImplementations(plugins.IDatasetForm):
             if plugin.name == 'hdx_package':
-                hdx_package_schema = plugin.create_package_schema()
+                if type == 'create':
+                    hdx_package_schema = plugin.create_package_schema()
+                elif type == 'update':
+                    hdx_package_schema = plugin.update_package_schema()
             elif plugin.name == 'requestdata':
-                requestdata_schema = plugin.create_package_schema()
+                if type == 'create':
+                    requestdata_schema = plugin.create_package_schema()
+                elif type == 'update':
+                    requestdata_schema = plugin.update_package_schema()
 
         schema.update(requestdata_schema)
         schema.update(hdx_package_schema)
@@ -45,21 +51,17 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
         schema.pop('license_id')
         schema.pop('license_other')
 
-        # "groups_list" is temporary removed from the schema because there are
-        # some issues when creating/updating a package
-        # schema.pop('groups_list')
-
         return schema
 
     def create_package_schema(self):
         schema = super(Hdx_Request_DataPlugin, self).create_package_schema()
-        schema = self._modify_package_schema(schema)
+        schema = self._modify_package_schema(schema, type='create')
 
         return schema
 
     def update_package_schema(self):
         schema = super(Hdx_Request_DataPlugin, self).update_package_schema()
-        schema = self._modify_package_schema(schema)
+        schema = self._modify_package_schema(schema, type='update')
 
         return schema
 

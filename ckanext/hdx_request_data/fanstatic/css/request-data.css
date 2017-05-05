@@ -25,6 +25,10 @@
   background-color: #1ebdaf;
   padding: 80px !important;
   height: inherit;
+  background-image: url('/images/backgrounds/pixels_white.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 200%;
 }
 
 .two-cols {

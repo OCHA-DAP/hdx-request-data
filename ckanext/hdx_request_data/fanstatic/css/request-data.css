@@ -296,3 +296,11 @@ h4{
   margin-top: 20px;
   border-radius: 8px;
 }
+
+.white {
+  color: #ffffff !important;
+}
+
+.bottom-actions button {
+  border-color: transparent !important;
+}

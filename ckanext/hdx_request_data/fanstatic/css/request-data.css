@@ -1,9 +1,9 @@
 .modal {
   display: block;
-  position: fixed !important;
-  top: 10% !important;
+  position: relative; !important;
+  top: 50% !important;
   left: 50% !important;
-  transform: translateX(-50%) !important;
+  transform: translateX(-50%) translateY(-50%) !important;
 }
 
 .modal-content {
@@ -12,7 +12,7 @@
 
 .modal-body {
   padding: 0px 0px 0px !important;
-  top: 30%;
+  position: absolute;
 }
 
 .right-col {

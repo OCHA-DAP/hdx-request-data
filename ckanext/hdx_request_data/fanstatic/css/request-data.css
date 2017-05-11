@@ -269,6 +269,7 @@ h4{
 .reply-request-form-large-title {
   color: #7C7B7C;
   font-family: 'Gotham-Bold', sans-serif;
+  word-wrap: break-word;
 }
 
 .reply-request-form-request-info {

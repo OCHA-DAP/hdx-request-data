@@ -1,6 +1,8 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
+from ckanext.hdx_request_data.logic import validators
+
 
 class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
                              toolkit.DefaultDatasetForm):
@@ -23,7 +25,6 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
         convert_to_extras = toolkit.get_converter('convert_to_extras')
         ignore_missing = toolkit.get_validator('ignore_missing')
         not_empty = toolkit.get_validator('not_empty')
-        is_positive_integer = toolkit.get_validator('is_positive_integer')
 
         for plugin in plugins.PluginImplementations(plugins.IDatasetForm):
             if plugin.name == 'hdx_package':
@@ -45,7 +46,7 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
             'data_update_frequency': [ignore_missing, convert_to_extras],
             'field_names': [not_empty, convert_to_extras],
             'file_types': [not_empty, convert_to_extras],
-            'num_of_rows': [ignore_missing, is_positive_integer,
+            'num_of_rows': [ignore_missing, validators.is_positive_integer,
                             convert_to_extras]
         })
 
@@ -75,7 +76,6 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
         convert_from_extras = toolkit.get_converter('convert_from_extras')
         ignore_missing = toolkit.get_validator('ignore_missing')
         not_empty = toolkit.get_validator('not_empty')
-        is_positive_integer = toolkit.get_validator('is_positive_integer')
 
         for plugin in plugins.PluginImplementations(plugins.IDatasetForm):
             if plugin.name == 'hdx_package':
@@ -92,7 +92,7 @@ class Hdx_Request_DataPlugin(plugins.SingletonPlugin,
             'field_names': [convert_from_extras, not_empty],
             'file_types': [convert_from_extras, not_empty],
             'num_of_rows': [convert_from_extras, ignore_missing,
-                            is_positive_integer]
+                            validators.is_positive_integer]
         })
 
         return schema

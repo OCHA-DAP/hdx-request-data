@@ -150,11 +150,6 @@
     border: 0px !important;
     }
 
-.counter-number{
-   padding: 7px 20px 22px 14px !important;
-   text-align:initial !important;
-}
-
 h3{
     margin-left:8px;
     font-size:25px !important;
@@ -165,7 +160,7 @@ h4{
 .requested-data-container__content-item-counters{
     position:absolute;
     right: 120px !important;
-    top: 45px !important;
+    top: 30px !important;
 }
 .glyphicon-container{
     top: 51px;

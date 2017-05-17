@@ -33,7 +33,7 @@
 
 .two-cols {
   width: 890px !important;
-  height: 700px !important;
+  height: 760px !important;
   overflow: hidden !important;
   margin-left: 0px !important;
 }
@@ -245,9 +245,6 @@ h4{
 }
 
 .request-data-form-control .error-block {
-  position: absolute;
-  margin: 0;
-  left: 9px;
   color: #ff0000;
 }
 
@@ -267,7 +264,7 @@ h4{
 
 .reply-request-form {
   width: 880px !important;
-  height: 550px !important;
+  height: 610px !important;
 }
 
 .reply-request-form-large-title {

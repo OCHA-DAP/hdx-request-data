@@ -4,7 +4,7 @@
   <div class="modal-content">
     <div class="modal-body">
       <div class="row two-cols" style="width: initial !important;">
-        <div class="col-sm-6 left-col" style="height: 550px;">
+        <div class="col-sm-6 left-col" style="height: 610px;">
           <div class="large-title reply-request-form-large-title white">
             {{ package_name }}
           </div>
@@ -28,6 +28,7 @@
           </div>
         </div>
         <div class="col-sm-6 right-col" style="background-color: #EEEEEE;">
+          <div class="alert alert-error hide"></div>
           <div class="paddingfix">
             <div class="ds-title">
               Reply to this request
@@ -36,7 +37,6 @@
               Discuss how to share the requested data
             </div>
             <form class="form-horizontal" id="request-data-form" enctype="multipart/form-data">
-              <div class="alert alert-error hide"></div>
               {% block message_content %}
                 <div class="request-data-form-control reply-request-form-control">
                   <textarea id="field-comments" name="message_content" class="request-data-form-input reply-request-form-message-content" type="text" value="" required="required" style="height: 100px; padding: 12px;"></textarea>
@@ -51,7 +51,7 @@
               </div>
 
               <div class="request-data-form-control reply-request-form-control">
-                <input type="email" name="reply_email" class="request-data-form-input reply-request-form-reply-email" />
+                <input type="email" name="email" class="request-data-form-input reply-request-form-reply-email" required="required" />
               </div>
 
               <div class="ds-title">

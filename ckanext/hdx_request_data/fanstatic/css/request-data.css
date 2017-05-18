@@ -33,7 +33,7 @@
 
 .two-cols {
   width: 890px !important;
-  height: 700px !important;
+  height: 760px !important;
   overflow: hidden !important;
   margin-left: 0px !important;
 }
@@ -110,6 +110,10 @@
 
 .modal-footer {
   border-top: unset !important;
+  position: absolute;
+  right: 50px;
+  bottom: 180px;
+  padding: initial !important;
 }
 
 .paddingfix {
@@ -146,11 +150,6 @@
     border: 0px !important;
     }
 
-.counter-number{
-   padding: 7px 20px 22px 14px !important;
-   text-align:initial !important;
-}
-
 h3{
     margin-left:8px;
     font-size:25px !important;
@@ -161,7 +160,7 @@ h4{
 .requested-data-container__content-item-counters{
     position:absolute;
     right: 120px !important;
-    top: 45px !important;
+    top: 30px !important;
 }
 .glyphicon-container{
     top: 51px;
@@ -241,9 +240,6 @@ h4{
 }
 
 .request-data-form-control .error-block {
-  position: absolute;
-  margin: 0;
-  left: 9px;
   color: #ff0000;
 }
 
@@ -267,7 +263,7 @@ h4{
 
 .reply-request-form {
   width: 880px !important;
-  height: 550px !important;
+  height: 610px !important;
 }
 
 .reply-request-form-large-title {
@@ -299,7 +295,8 @@ h4{
   font-size: 14px;
 }
 
-.reply-request-form-message-content {
+.reply-request-form-message-content,
+.reply-request-form-reply-email {
   width: 335px;
   border: 1px solid #A7A7A7;
   margin-top: 20px;
@@ -312,4 +309,9 @@ h4{
 
 .bottom-actions button {
   border-color: transparent !important;
+}
+
+.reply-request-form-file-upload {
+  display: inline-block !important;
+  margin-left: 10px;
 }

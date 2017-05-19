@@ -1,16 +1,16 @@
-.modal {
+.request-data-modal {
   display: block;
-  position: relative; !important;
+  position: relative;
   top: 50% !important;
   left: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;
 }
 
-.modal-content {
+.request-data-modal-content {
   border: unset !important;
 }
 
-.modal-body {
+.request-data-modal-body {
   padding: 0px 0px 0px !important;
   position: absolute;
 }
@@ -31,7 +31,7 @@
   background-size: 200%;
 }
 
-.two-cols {
+.request-data-two-cols {
   width: 890px !important;
   height: 760px !important;
   overflow: hidden !important;
@@ -108,7 +108,7 @@
   padding-right: 10px !important;
 }
 
-.modal-footer {
+.request-data-modal-footer {
   border-top: unset !important;
   position: absolute;
   right: 50px;

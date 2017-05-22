@@ -18,6 +18,7 @@
     {% set redirect_url = h.url_for(controller='user', action='login') %}
     {% set requestdata_action = h.url_for('requestdata_send_request') %}
     {% set request_post_data = h.dump_json({'package_id': package.id, 'package_name': package.name}) %}
+    {% set is_current_user_a_maintainer = h.requestdata_is_current_user_a_maintainer(package.maintainer) %}
     <a href="#" class="btn btn-primary" style="margin-top: 10px;"
        data-module="modal-form"
        data-module-template_file="request_contact.html"
@@ -26,6 +27,7 @@
        data-module-is_logged_in="{{ is_logged_in }}"
        data-module-is_hdx="{{ is_hdx }}"
        data-module-redirect_url="{{ redirect_url }}"
+       data-module-is_current_user_a_maintainer="{{ is_current_user_a_maintainer }}"
     >Request access</a>
     <div class="requested-data-message"></div>
   {% else %}

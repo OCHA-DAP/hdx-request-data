@@ -241,6 +241,7 @@ h4{
 
 .request-data-form-control .error-block {
   color: #ff0000;
+  position: absolute !important;
 }
 
 .reply-request-form-control .error-block {

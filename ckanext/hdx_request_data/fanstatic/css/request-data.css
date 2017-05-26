@@ -110,7 +110,7 @@
 
 .request-data-modal-footer {
   border-top: unset !important;
-  position: absolute;
+  margin-top: 15px !important;
   right: 50px;
   bottom: 180px;
   padding: initial !important;

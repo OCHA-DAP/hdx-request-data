@@ -1,0 +1,19 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+{{ super() }}
+     {% if pkg_dict.type == 'hdx-requestdata-metadata-only' %}
+        <tr>
+            <th scope="row" class="dataset-label">{{ _('Field Names') }}</th>
+            <td class="dataset-details">{{ pkg_dict.field_names }}</td>
+        </tr>
+        <tr>
+            <th scope="row" class="dataset-label">{{ _('File Types') }}</th>
+            <td class="dataset-details">{{ pkg_dict.file_types }}</td>
+        </tr>
+        <tr>
+            <th scope="row" class="dataset-label">{{ _('Number of Rows') }}</th>
+            <td class="dataset-details">{{ pkg_dict.num_of_rows }}</td>
+        </tr>
+    {% endif %}
+{% endblock %}

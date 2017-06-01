@@ -365,3 +365,8 @@ h4{
 .requested-data-container-inline .btn:hover {
   border-color: transparent !important;
 }
+.request-data-replay__message_content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

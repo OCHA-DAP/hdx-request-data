@@ -361,3 +361,7 @@ h4{
   font-weight: bold;
   color: #333333;
 }
+
+.requested-data-container-inline .btn:hover {
+  border-color: transparent !important;
+}

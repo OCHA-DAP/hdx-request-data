@@ -165,7 +165,6 @@ h4{
 
 }
 .caret{
-    border-top:9px solid black !important;
     vertical-align: middle !important;
 }
 .btn-filter{
@@ -318,12 +317,13 @@ h4{
 }
 
 .archive-requests-arrow {
-  color: #3071a9 !important;
+  color: #007CE0 !important;
   margin-right: 15px;
 }
 
 .requested-data-container__content-item-counters {
-  margin-left: 15% !important;
+  margin-left: -320px !important;
+  width: initial !important;
 }
 
 .requested-data-container__collapse--request-status {
@@ -331,7 +331,7 @@ h4{
 }
 
 .requested-data-container__collapse--sections-archive .requested-data-container__content-item--requested-by {
-  margin-right: 120px !important;
+  margin-right: 132px !important;
 }
 
 .requested-data-order-btn {
@@ -344,7 +344,7 @@ h4{
 }
 
 .requests-header-counters {
-  margin-left: -26% !important;
+  margin-left: -29% !important;
 }
 
 .requested-data-container__content-item h4 {
@@ -364,4 +364,12 @@ h4{
 
 .requested-data-container-inline .btn:hover {
   border-color: transparent !important;
+}
+
+.requested-data-container__content-item--requested-by-info {
+  margin-right: 30px !important;
+}
+
+.requested-data-container__content-item--actions-new {
+  margin-right: 40px !important;
 }

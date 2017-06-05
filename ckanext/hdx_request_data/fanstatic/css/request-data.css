@@ -366,10 +366,17 @@ h4{
   border-color: transparent !important;
 }
 
+
 .requested-data-container__content-item--requested-by-info {
   margin-right: 30px !important;
 }
 
 .requested-data-container__content-item--actions-new {
   margin-right: 40px !important;
+}
+
+.request-data-replay__message_content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
